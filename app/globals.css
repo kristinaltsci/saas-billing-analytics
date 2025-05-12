@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 221 83% 53%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 40% 98%;
+    --sidebar-primary-foreground: 222.2 47.4% 11.2%;
+    --sidebar-accent: 217 91% 60%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 91% 60%;
+    --sidebar-ring: 210 40% 98%;
+
+    --chart-1: 221 83% 53%;
+    --chart-2: 262 83% 58%;
+    --chart-3: 142 76% 36%;
+    --chart-4: 31 90% 56%;
+    --chart-5: 338 85% 60%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+
+    --sidebar-background: 222.2 47.4% 11.2%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 210 40% 98%;
+    --sidebar-primary-foreground: 222.2 47.4% 11.2%;
+    --sidebar-accent: 217 91% 60%;
+    --sidebar-accent-foreground: 222.2 47.4% 11.2%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 224.3 76.3% 48%;
+
+    --chart-1: 217 91% 60%;
+    --chart-2: 262 83% 58%;
+    --chart-3: 142 76% 36%;
+    --chart-4: 31 90% 56%;
+    --chart-5: 338 85% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.badge-success {
+  @apply bg-success/15 text-success border-success/20;
+}
+
+.badge-destructive {
+  @apply bg-destructive/15 text-destructive border-destructive/20;
+}
+
+.badge-secondary {
+  @apply bg-secondary text-secondary-foreground;
+}
+
+.badge-outline {
+  @apply bg-background text-foreground;
+}
+
+.dashboard-card {
+  @apply transition-all duration-200 hover:shadow-md hover:border-primary/20;
+}
+
+.dashboard-metric-card {
+  @apply dashboard-card flex flex-col;
+}
+
+.dashboard-metric-card .card-header {
+  @apply pb-2;
+}
+
+.dashboard-metric-card .card-content {
+  @apply flex-1 flex flex-col justify-between;
+}
+
+.dashboard-metric-card .metric-value {
+  @apply text-3xl font-bold mt-2;
+}
+
+.dashboard-metric-card .metric-change {
+  @apply flex items-center text-xs mt-1;
+}
+
+.dashboard-metric-card .metric-description {
+  @apply text-xs text-muted-foreground mt-2;
+}
+
+.sidebar-nav-item {
+  @apply flex items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-primary/10 hover:text-primary;
+}
+
+.sidebar-nav-item.active {
+  @apply bg-primary/10 text-primary font-medium;
+}
+
+.sidebar-nav-item .icon {
+  @apply h-4 w-4;
+}
+
+.data-table-container {
+  @apply rounded-md border shadow-sm overflow-hidden;
+}
+
+.data-table th {
+  @apply bg-muted/50 font-medium text-muted-foreground;
+}
+
+.data-table tr:hover td {
+  @apply bg-muted/30;
+}
+
+.form-card {
+  @apply dashboard-card;
+}
+
+.form-section {
+  @apply space-y-4;
+}
+
+.form-group {
+  @apply space-y-2;
+}
+
+.form-label {
+  @apply text-sm font-medium;
+}
+
+.form-hint {
+  @apply text-xs text-muted-foreground mt-1;
+}
+
+.page-header {
+  @apply flex flex-col space-y-2 md:flex-row md:items-center md:justify-between md:space-y-0 mb-6;
+}
+
+.page-title {
+  @apply text-2xl font-bold tracking-tight;
+}
+
+.page-description {
+  @apply text-muted-foreground;
+}
+
+.page-actions {
+  @apply flex items-center gap-2;
+}
